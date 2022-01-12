@@ -7,7 +7,7 @@ function App() {
     { title: "Applied", cards: [{ name: "kyle" }, { name: "jack" }] },
     {
       title: "Phase One",
-      cards: [{ name: "Steven" }, { name: "Rodney" }, { name: "Debora" }],
+      cards: [],
     },
   ]);
   return (

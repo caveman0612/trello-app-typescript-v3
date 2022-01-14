@@ -6,9 +6,18 @@ const Body = ({ board, setBoard }: any) => {
 
   function addNewFolder(event: any) {
     event?.preventDefault();
-    setBoard((prev: any) => {
-      return [...prev, { title: newFolder, cards: [] }];
-    });
+    if (
+      board.some((folder: any) => {
+        return folder.title === newFolder;
+      })
+    ) {
+      alert("already have a folder with that name");
+    } else {
+      setBoard((prev: any) => {
+        return [...prev, { title: newFolder, cards: [] }];
+      });
+      setNewFolder("");
+    }
   }
   return (
     <div className="Body">

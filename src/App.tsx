@@ -3,13 +3,23 @@ import Body from "./Components/Body/Body";
 import Header from "./Components/Header";
 
 function App() {
-  const [board, setBoard] = useState([
-    { title: "Applied", cards: [{ name: "kyle" }, { name: "jack" }] },
+  interface cardsType {
+    name: string;
+  }
+  interface folderType {
+    title: string;
+    cards: cardsType[];
+  }
+
+  const boardTemplate: folderType[] = [
+    { title: "ToDo", cards: [{ name: "By food" }, { name: "Pick up kids" }] },
     {
-      title: "Phase One",
+      title: "Errands",
       cards: [],
     },
-  ]);
+  ];
+
+  const [board, setBoard] = useState(boardTemplate);
   return (
     <div className="App">
       <Header />

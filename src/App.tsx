@@ -6,6 +6,7 @@ function App() {
   interface cardsType {
     name: string;
   }
+
   interface folderType {
     title: string;
     cards: cardsType[];
@@ -20,8 +21,9 @@ function App() {
   ];
 
   const [board, setBoard] = useState(boardTemplate);
+
   return (
-    <div className="App">
+    <div className="container">
       <Header />
       <Body board={board} setBoard={setBoard} />
     </div>

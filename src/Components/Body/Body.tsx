@@ -20,7 +20,7 @@ const Body = ({ board, setBoard }: any) => {
     }
   }
   return (
-    <div className="Body">
+    <div className="container d-flex">
       {board.map((folder: any) => {
         return (
           <Folder

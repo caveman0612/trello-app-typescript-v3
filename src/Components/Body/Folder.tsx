@@ -13,27 +13,27 @@ const Folder = ({ folder, setBoard, board }: any) => {
   }
 
   return (
-    <div className="Folder">
-      <div className="folderTitle">
+    <div className="Folder card me-5">
+      <div className="folderTitle card-header d-flex justify-content-between align-items-start">
         <h1>{folder.title}</h1>
         <button onClick={removeFolder} name={folder.title}>
           +
         </button>
       </div>
-
-      <hr></hr>
-      {folder.cards.map((card: any) => {
-        return (
-          <Card
-            card={card}
-            key={card.name}
-            setBoard={setBoard}
-            title={folder.title}
-            board={board}
-          />
-        );
-      })}
-      <InputCard setBoard={setBoard} title={folder.title} board={board} />
+      <div className="card-body">
+        {folder.cards.map((card: any) => {
+          return (
+            <Card
+              card={card}
+              key={card.name}
+              setBoard={setBoard}
+              title={folder.title}
+              board={board}
+            />
+          );
+        })}
+        <InputCard setBoard={setBoard} title={folder.title} board={board} />
+      </div>
     </div>
   );
 };
